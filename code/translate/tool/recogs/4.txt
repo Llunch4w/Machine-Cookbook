@@ -1,0 +1,7 @@
+virtualized machines. A large variety of products already exist for firewalling, caching, ciphering or
+load balancing, in both mobile and fixed networks Software implementations of network functions
+are particularly relevant for DPi because this function is highly dependent on the traffic dynamics
+and may require additional computational resources on demand dPi market leaders such as sandvine
+offer a virtual version of their products with the same functionality and features as the physical ones
+Virtualizing network functions enables to rapidly scale up(or down) services, as this only requires the
+installation or activation of virtual functions on existing server equipment

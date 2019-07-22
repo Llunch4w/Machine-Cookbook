@@ -1,0 +1,4 @@
+Cost-based placement of vDPI functions in NFV infrastructures
+Mathieu Bouet, I f Jeremie leguay, 2 Theo Combe' and Vania Conan'
+Thales communications Security, Gennevilliers, france
+france Research Center Huawei Technologies Co. Ltd, Boulogne, france

@@ -1,0 +1,18 @@
+SUMMARY
+Network functions virtualization (NFV) is transforming how networks are operated and how network
+services are delivered. The network is more flexible and adaptable and it can scale with traffic demands
+To manage video traffic in the network, or acquire protection from cyber-attacks, Deep Packet Inspection
+DPD) is increasingly deployed at specific locations in the network. The virtual DPI (VDPI)engines can be
+dynamically deployed as software on commodity servers within emerging network functions virtualization
+infrastructures. For a network operator, deploying a set of vdPls over the network is a matter of finding the
+appropriate placement that meets the traffic management or cyber-security targets(such as the number of
+inspected flows) and operational cost constraints (licence fees, network efficiency or power consumption)
+In this work, we formulate the vdPI placement problem as a cost minimization problem. The cost captures
+the different objectives that the operator is pursuing. A placement of vDPIs on the network nodes realizes a
+trade-off between these possibly conflicting goals. We cast the problem as a multi-commodity flow problem
+and solve it as an integer linear program. We then devise a centrality-based greedy algorithm and assess
+its validity by comparing it with the integer linear program optimal solution on a real dataset (GEANT
+network with 22 nodes and real traffic matrix ). We further analyse the scalability of the heuristic by
+applying it to larger random networks of up to 300 nodes. The results show the network structure and the
+costs influence time performance. Finally, they demonstrate that the heuristic approximates the optimal on
+small and medium problem instances well. Copyright o 2015 John Wiley sons, Ltd

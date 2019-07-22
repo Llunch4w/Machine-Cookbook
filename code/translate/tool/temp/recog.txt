@@ -1,0 +1,4 @@
+Now suppose that writing every bit of the output to memory counts as an operation that
+we wish to account for in our running-time analysis (in the previous part, we disregard the
+time required to write the output to memory). Can you compute Fn in time that is bounded
+by a polynomial in the size of the input? Justify your answer.

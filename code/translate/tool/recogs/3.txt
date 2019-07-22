@@ -1,0 +1,16 @@
+1 INTRODUCTION
+Deep Packet Inspection (DPD is a technique that allows fine-grained real-time monitoring of flows
+and users activity in networks and IT systems. It processes network packets to examine the data part
+(and possibly also the header) of a packet flow, identifying traffic types and searching for protocol
+non-compliance, viruses, spam, intrusions or any other specified signature dPi is a key enabler of
+traffic management, especially to deal with the quality of service of multimedia traffic and to deliver
+security services Infonetics report that the dpi market is forecast to grow at a 22% rate from 2013 to
+2018 driven in particular by the video traffic growth in Asian markets and in lte deployments [1]
+Originally implemented as hardware middleboxes to be installed in network infrastructures
+DPI appliances are evolving towards the network functions virtualization (NFV) paradigm: they are
+being virtualized and delivered as software bundles that can be deployed and used on demand and
+on commodity hardware platforms. This approach is strongly supported by ISPs at ETSI [2] to build
+NFV infrastructures, which basically consist of cloud platforms that can run software network
+functions. These infrastructures are intended to be deployed at Points of Presence(POs)or local aggre
+gation points in carrier networks. Network functions are delivered as optimized software that fully
+benefit from standard x86 multi-core processor architectures to process packets and that can run into
