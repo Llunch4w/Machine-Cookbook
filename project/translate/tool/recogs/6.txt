@@ -1,0 +1,21 @@
+Complete webhook deployment consists of the following Kubernetes resources
+Deployment: runs a single instance of mutating webhook server application. It ensures that at least 1 instance of
+webhook is always running-in case of node failure webhook application pod gets rescheduled to another node in the
+same cluster. Running the webhook server in deployment also guarantees that app will start automatically afte
+single-cluster node reboot and Kubelet or container runtime service restart
+Service: exposes mutating webhook server application to the external world, making it visible for Kubernetes API
+server
+Config Map: defines a file containing a webhook application configuration. Webhook reads it on each admission
+review request, which makes the config file configurable during runtime
+Secret: contains tLS certificate and private key which are used to secure communication between the APl server and
+the webhook application
+Mutating Admission Controller configuration: enable the API server to send admission review request to the webhook
+Whenever user requests pod to be created. admission controller configuration points to the service endpoint it also
+specifies tls certificate used for authorization rbac rules and defines failure policy default failure policy is set to
+Ignore", so in case of malfunctioning webhook server spinning up new pods and setting CMK binary and config
+volume mounts is still possible
+All of the above resources are created automatically during cluster init, although they may be also deployed manually
+using template specification files located in resources/webhook directory. Manual deployment requires a properly signed
+TLS certificate and private key pair to be created and encoded into base64 format beforehand. Creating and configuring
+TLS certificates is out of the scope of this document
+The diagram below shows a high-level overview of the mutating webhook mechanism in CMK

@@ -1,0 +1,14 @@
+Mutating webhook(Kubernetes v1.9.0+)
+CMK makes use of mutating admission webhook to simplify deployment of workloads
+Whenever a user tries to create a pod which definition contains any container requesting CMK Extended Resources or has
+cmk.intel. com/mutate: "true"annotation, CMK webhook modifies it by applying a number of modifications on top of the
+original pod spec, including
+CMK installation and configuration directories and host /proc filesystem volumes,
+CMK service account
+tolerations required for the pod to be scheduled on the cmk enabled node
+annotation to mark pod as modified
+Containers which are part of the pod specification are updated with
+environmental variable CMK_NUM_CORES with its value set to the number of cores specified in the Extended Resource
+t/imit(if present),
+volume mounts (referencing volumes added to the pod),
+environmental variable CMK PRoc Fs

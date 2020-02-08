@@ -1,0 +1,14 @@
+Description
+If a pod that consumes an exclusive opaque integer resource crashes in a way that prevents the
+solate launcher from releasing the assigned cores, then although the oir becomes available, the next
+vocation of isolate may not be able to safely make an allocation. This could occur for a number of
+reasons, most likely among them are: child process fails to terminate within the allowed grace period
+after receiving the TERM signal (Kubelet follows up with KILL) or receiving KILL from the kernel OOM
+(out-of-memory) killer. In this case, isolate must crash with a nonzero exit status. This will appear to
+the operator as a failed pod launch, and the scheduler will try to reschedule the pod. This condition will
+persist on that node until reconcile runs, at which point it will observe that the container's PID is
+invalid and free the cores for reuse by updating the tasks file
+This should be extremely rare in practice, but it relates to the above scenario. If a PID of a cmk
+subcommand leaks as described above and is recycled by the kernel before reconcile runs, then when
+reconcile does run, it will see that the PId refers to a running process and will not remove that PID
+from the tasks file. There is currently no mitigation in place to protect against this scenario
